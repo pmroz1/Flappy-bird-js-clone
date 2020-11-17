@@ -11,15 +11,17 @@
 }
 
 #pipe {
+    z-index: 0;
     width: 50px;
     height: 600px;
-    background-color: red;
+    background-color: green;
     position: relative;
     left: 400px;
     animation: pipeAnimation 2s infinite linear;
 }
 
 #crossing {
+    z-index: 1;
     width: 50px;
     height: 200px;
     position: relative;
@@ -27,6 +29,15 @@
     top: -500px;
     background-color: white;
     animation: pipeAnimation 2s infinite linear;
+}
+
+#player {
+    z-index: 3;
+    background-color: aqua;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    position: absolute;
 }
 
 .pipeMovement {
