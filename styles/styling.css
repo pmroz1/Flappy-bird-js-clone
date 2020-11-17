@@ -1,0 +1,43 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#gameWindow {
+    width: 400px;
+    height: 600px;
+    border: 1px solid black;
+    margin: auto;
+}
+
+#pipe {
+    width: 50px;
+    height: 600px;
+    background-color: red;
+    position: relative;
+    left: 400px;
+    animation: pipeAnimation 2s infinite linear;
+}
+
+#crossing {
+    width: 50px;
+    height: 200px;
+    position: relative;
+    left: 400px;
+    top: -500px;
+    background-color: white;
+    animation: pipeAnimation 2s infinite linear;
+}
+
+.pipeMovement {
+    animation: pipeAnimation 2s infinite linear;
+}
+
+@keyframes pipeAnimation {
+    0% {
+        left: 400px
+    }
+    100% {
+        left: -50px;
+    }
+}
