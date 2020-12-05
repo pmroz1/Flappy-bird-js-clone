@@ -12,7 +12,7 @@ Flappy bird clone created using JavaScript
 
 Windows:
 ```sh
-git clone https://github.com/ReformedMrozu/HT-Engine
+git clone https://github.com/ReformedMrozu/Flappy-bird-js-clone.git
 ```
 
 ## Development setup
