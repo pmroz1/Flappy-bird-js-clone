@@ -27,8 +27,7 @@ function getRandomInt(min, max) {
 }
 
 setInterval(() => {
-
-
+    //console.log("pl " + parseInt(window.getComputedStyle(pipe).getPropertyValue('left')))
     if (player.innerHTML != playerIdle && jumping != true) {
         player.innerHTML = playerIdle
     }
@@ -53,8 +52,6 @@ document.body.onkeyup = function(e) {
 
 function MoveUp() {
     jumping = true;
-    console.log("here")
-
 
     let itr = 0
     let jump = setInterval(() => {
@@ -73,13 +70,33 @@ function MoveUp() {
 }
 
 function CheckForCollision() {
-    var pt = parseInt(window.getComputedStyle(player).getPropertyValue('top'))
-    var pl = parseInt(window.getComputedStyle(player).getPropertyValue('top'))
-    if ((30 >= pipe.style.left) &&
-        (30 <= pipe.style.left + 50)) {
-        if ((pt < pipe.style.top)) {
-            // alert("GAME OVER!")
+    var pt = parseInt(window.getComputedStyle(pipe).getPropertyValue('top'))
+    var pl = parseInt(window.getComputedStyle(pipe).getPropertyValue('left'))
+
+    var pt2 = parseInt(window.getComputedStyle(pipeUp).getPropertyValue('top')) + 400
+    var pl2 = parseInt(window.getComputedStyle(pipeUp).getPropertyValue('left'))
+
+    var playerTop = parseInt(window.getComputedStyle(player).getPropertyValue('top'))
+
+    if ((30 >= pl) &&
+        (30 <= pl + 100)) {
+        if ((playerTop > pt)) {
+            alert("GAME OVER! \n Total points: " + points)
+            function_to_call_when_oked_or_closed();
             console.log("HIT!")
         }
     }
+
+    if ((30 >= pl2) &&
+        (30 <= pl2 + 100)) {
+        if ((playerTop < pt2)) {
+            alert("GAME OVER! \n Total points: " + points)
+            function_to_call_when_oked_or_closed();
+            console.log("HIT!")
+        }
+    }
+}
+
+function function_to_call_when_oked_or_closed() {
+    points = 0;
 }
