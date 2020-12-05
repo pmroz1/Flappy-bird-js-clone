@@ -9,13 +9,25 @@ const playerUP = '<img src="/assets/birdUp.png" alt="birdUp">'
 
 let jumping = false
 
+var points = 0;
+
 crossing.addEventListener('animationiteration', () => {
-    let randomGenerator = (Math.random() * 400 + 600)
-    pipeUp.style.top = -randomGenerator + "px"
-    pipe.style.top = -randomGenerator + 1150 + "px"
+    let randomGenerator = getRandomInt(-350, -100)
+    pipeUp.style.top = randomGenerator + "px"
+    pipe.style.top = randomGenerator + 600 + "px"
+
+    ++points
+    document.getElementById("points").innerHTML = "Points:" + points;
 })
 
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
 setInterval(() => {
+
 
     if (player.innerHTML != playerIdle && jumping != true) {
         player.innerHTML = playerIdle
@@ -61,10 +73,13 @@ function MoveUp() {
 }
 
 function CheckForCollision() {
-    if ((player.style.left + 30 >= crossing.style.left) &&
-        (player.style.left + 30 <= crossing.style.left + 50)) {
-        // if ((player.style.top) && ()) {
-
-        // }
+    var pt = parseInt(window.getComputedStyle(player).getPropertyValue('top'))
+    var pl = parseInt(window.getComputedStyle(player).getPropertyValue('top'))
+    if ((30 >= pipe.style.left) &&
+        (30 <= pipe.style.left + 50)) {
+        if ((pt < pipe.style.top)) {
+            // alert("GAME OVER!")
+            console.log("HIT!")
+        }
     }
 }

@@ -24,7 +24,7 @@ body {
     width: 50px;
     height: 600px;
     /* background-color: green; */
-    position: relative;
+    position: absolute;
     left: 400px;
     top: 500px;
     animation: pipeAnimation 2s infinite linear;
@@ -33,9 +33,9 @@ body {
 #pipeDownside {
     z-index: -1;
     width: 50px;
-    height: 100px;
+    height: 400px;
     /* background-color: green; */
-    position: relative;
+    position: absolute;
     left: 400px;
     animation: pipeAnimation 2s infinite linear;
 }
@@ -50,14 +50,23 @@ body {
     background-color: grey;
 }
 
+#points {
+    position: absolute;
+    z-index: 100;
+    font-size: 50px;
+    color: white;
+    top: 650px;
+    left: 100px;
+}
+
 #hideBlock2 {
     position: absolute;
-    top: 602px;
-    left: -100px;
+    top: 0px;
+    left: -1002px;
     z-index: 99;
     width: 1000px;
-    height: 400px;
-    background-color: red;
+    height: 606px;
+    background-color: grey;
 }
 
 #crossing {
