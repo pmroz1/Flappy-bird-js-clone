@@ -1,5 +1,3 @@
-
-
 # Flappy-bird-js-clone
 [![Build Status][travis-image]][travis-url]
 
