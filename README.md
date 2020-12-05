@@ -8,7 +8,7 @@ Flappy bird clone created using JavaScript
 
 ## Download / Clone
 
-Windows:
+Windows & linux & OSX:
 ```sh
 git clone https://github.com/ReformedMrozu/Flappy-bird-js-clone.git
 ```
