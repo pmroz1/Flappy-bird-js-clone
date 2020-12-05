@@ -3,21 +3,61 @@
     margin: 0px;
 }
 
+body {
+    position: relative;
+    overflow: hidden;
+    background-color: gray;
+}
+
 #gameWindow {
+    position: relative;
+    z-index: -2;
     width: 400px;
     height: 600px;
     border: 1px solid black;
     margin: auto;
+    background-image: url("/assets/bkg.png");
 }
 
 #pipe {
-    z-index: 0;
+    z-index: -1;
     width: 50px;
     height: 600px;
-    background-color: green;
+    /* background-color: green; */
+    position: relative;
+    left: 400px;
+    top: 500px;
+    animation: pipeAnimation 2s infinite linear;
+}
+
+#pipeDownside {
+    z-index: -1;
+    width: 50px;
+    height: 100px;
+    /* background-color: green; */
     position: relative;
     left: 400px;
     animation: pipeAnimation 2s infinite linear;
+}
+
+#hideBlock {
+    position: absolute;
+    top: 602px;
+    left: -100px;
+    z-index: 99;
+    width: 1000px;
+    height: 400px;
+    background-color: grey;
+}
+
+#hideBlock2 {
+    position: absolute;
+    top: 602px;
+    left: -100px;
+    z-index: 99;
+    width: 1000px;
+    height: 400px;
+    background-color: red;
 }
 
 #crossing {
@@ -27,13 +67,13 @@
     position: relative;
     left: 400px;
     top: -500px;
-    background-color: white;
+    /* background-color: white; */
     animation: pipeAnimation 2s infinite linear;
 }
 
 #player {
     z-index: 3;
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 50px;
     height: 50px;
     border-radius: 50px;
